@@ -21,6 +21,8 @@ public class TokenIssueFlowResponder extends FlowLogic<Void> {
             @Override
             protected void checkTransaction(SignedTransaction stx) throws FlowException {
                 // Implement responder flow transaction checks here
+                //if it's empty the transaction will be automatically signed
+
             }
         });
         subFlow(new ReceiveFinalityFlow(otherSide, signedTransaction.getId()));
